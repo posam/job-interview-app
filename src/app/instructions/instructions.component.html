@@ -1,0 +1,427 @@
+<section>
+  <div class="container py-5">
+    <h1>Inštrukcie</h1>
+    <hr>
+    <div>
+      <p>Pripravte Angular aplikáciu podľa zadaní <strong>Task 1 - Employees</strong> a <strong>Task 2 - Posts</strong>
+        a demonštrujte znalosť viacerých prístupov na tvorbu formulárov a celkovú znalosť tvorby aplikácie v tomto frameworku.<br>
+        V prípade nutnosti môžete použiť lubovoľné knižnice vhodné pre Angular Framework.
+      </p>
+      <p>
+        Výstup by mal byť nasledovný:
+      </p>
+      <ol>
+        <li>postup build-u aplikácie</li>
+        <li>dev server z ktorého aplikácia bude servovaná</li>
+        <li>unit testy</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h1>Task 1 - Employees</h1>
+    <hr>
+    <p>
+      Pripravte modul tejto aplikácie "<strong>Employee</strong>" prístupom pre tvorbu formulárov
+      "<strong>Template-driven Forms</strong>" a "<strong>Reactive Forms</strong>".
+      Jednotlivé vstupné polia by mali obsahovať <strong>validačné pravidlá</strong>.
+      Okrem registračného formulára bude komponent obsahovať aj <strong>výpis registrovaných zamestnancov</strong>.
+      Jednotlivé karty zamestnancov <strong>je možné odstrániť</strong>. Pred dokončením akcie odstránenia je vhodné využiť
+      <strong>konfirmačné modálne okno</strong>.
+      Dáta budú uložené lokálne <strong>bez nutnosti použitia databázy</strong>.
+    </p>
+    <p>
+      <em>Bonus – dynamický formulár a/alebo FormArray.</em>
+    </p>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4">Registrácia zamestnanca</h2>
+    <form>
+      <article>
+        <h5 class="my-4">Základné informácie</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="street">Meno:</label>
+              <input type="text" class="form-control is-invalid" id="name" name="name">
+              <div class="invalid-feedback">
+                Prosím vyplňte povinné pole.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="suite">Priezvisko:</label>
+              <input type="text" class="form-control" id="surname" name="surname">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="suite">Dátum narodenia:</label>
+              <input type="date" class="form-control" id="birthdate" name="birthdate">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="street">Pozícia:</label>
+              <input type="text" class="form-control" id="position" name="position" placeholder="napr. Senior Software Engineer">
+            </div>
+          </div>
+        </div>
+      </article>
+      <article>
+        <h5 class="my-4">Adresa</h5>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="form-group">
+              <label for="street">Ulica:</label>
+              <input type="text" class="form-control" id="street" name="street">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="suite">Číslo domu:</label>
+              <input type="text" class="form-control" id="suite" name="suite">
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="form-group">
+            <label for="city">Mesto:</label>
+            <input type="text" class="form-control" id="city" name="city">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="zipcode">PSČ:</label>
+            <input type="text" class="form-control" id="zipcode" name="zipcode">
+          </div>
+        </div>
+      </div>
+      <article>
+        <h5 class="my-4">Kontakné informácie</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phone">Telefónne číslo:</label>
+              <input type="text" class="form-control" id="phone" name="phone">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="website">Web:</label>
+              <input type="text" class="form-control" id="website" name="website">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="text" class="form-control" id="email" name="email">
+            </div>
+          </div>
+        </div>
+      </article>
+      <button type="submit" class="my-2 btn btn-primary">Potvrdiť registráciu</button>
+    </form>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4">Zoznam zamestnancov</h2>
+    <div class="alert alert-info" role="alert">
+      Momentálne neevidujeme žiadnych zamestnancov.
+    </div>
+    <div class="card-deck mb-4">
+      <!-- card -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Michal Peterko</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Pozícia</strong></div>
+                <div class="col-md-12">Angular Developer</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Dátum narodenia</strong></div>
+                <div class="col-md-12">12.8.1990</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Telefónne číslo</strong></div>
+                <div class="col-md-12">+421919029343</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Email</strong></div>
+                <div class="col-md-12"><a href="mailto:michal.peterko@email.com">michal.peterko@email.com</a></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Web</strong></div>
+                <div class="col-md-12"><a href="http://www.michalpeterko.com" target="_blank">www.michalpeterko.com</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><strong>Adresa</strong></div>
+            <div class="col-md-12">
+              Bajkalská 28, 821 09 Bratislava
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Vymaž</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Michal Peterko</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Pozícia</strong></div>
+                <div class="col-md-12">Angular Developer</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Dátum narodenia</strong></div>
+                <div class="col-md-12">12.8.1990</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Telefónne číslo</strong></div>
+                <div class="col-md-12">+421919029343</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Email</strong></div>
+                <div class="col-md-12"><a href="mailto:michal.peterko@email.com">michal.peterko@email.com</a></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Web</strong></div>
+                <div class="col-md-12"><a href="http://www.michalpeterko.com" target="_blank">www.michalpeterko.com</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><strong>Adresa</strong></div>
+            <div class="col-md-12">
+              Bajkalská 28, 821 09 Bratislava
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Vymaž</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Michal Peterko</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Pozícia</strong></div>
+                <div class="col-md-12">Angular Developer</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Dátum narodenia</strong></div>
+                <div class="col-md-12">12.8.1990</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Telefónne číslo</strong></div>
+                <div class="col-md-12">+421919029343</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Email</strong></div>
+                <div class="col-md-12"><a href="mailto:michal.peterko@email.com">michal.peterko@email.com</a></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Web</strong></div>
+                <div class="col-md-12"><a href="http://www.michalpeterko.com" target="_blank">www.michalpeterko.com</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><strong>Adresa</strong></div>
+            <div class="col-md-12">
+              Bajkalská 28, 821 09 Bratislava
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Vymaž</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Michal Peterko</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Pozícia</strong></div>
+                <div class="col-md-12">Angular Developer</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Dátum narodenia</strong></div>
+                <div class="col-md-12">12.8.1990</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Telefónne číslo</strong></div>
+                <div class="col-md-12">+421919029343</div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Email</strong></div>
+                <div class="col-md-12"><a href="mailto:michal.peterko@email.com">michal.peterko@email.com</a></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12"><strong>Web</strong></div>
+                <div class="col-md-12"><a href="http://www.michalpeterko.com" target="_blank">www.michalpeterko.com</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><strong>Adresa</strong></div>
+            <div class="col-md-12">
+              Bajkalská 28, 821 09 Bratislava
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Vymaž</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h1>Task 2 - Posts</h1>
+    <hr>
+    <div>
+      <p>Pripravte modul tejto aplikácie "<strong>Post</strong>" prístupom získavaním dát zo servera.
+        Tento modul musí obsahovať podstránku <strong>zoznam článkov</strong> a <strong>detail článku</strong> s <strong>prislúchajúcimi komentármi</strong>.
+      </p>
+      <table class="table mt-3">
+        <thead>
+        <tr>
+          <th scope="col">Method</th>
+          <th scope="col">Endpoint</th>
+          <th scope="col">Link</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">GET</th>
+          <td>/posts</td>
+          <td><a href="https://jsonplaceholder.typicode.com/posts" target="_blank">https://jsonplaceholder.typicode.com/posts</a></td>
+        </tr>
+        <tr>
+          <th scope="row">GET</th>
+          <td>/posts/1</td>
+          <td><a href="https://jsonplaceholder.typicode.com/posts/1" target="_blank">https://jsonplaceholder.typicode.com/posts/1</a></td>
+        </tr>
+        <tr>
+          <th scope="row">GET</th>
+          <td>/comments</td>
+          <td><a href="https://jsonplaceholder.typicode.com/comments?postId=1" target="_blank">https://jsonplaceholder.typicode.com/comments?postId=1</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4">Zoznam článkov</h2>
+    <div class="alert alert-info" role="alert">
+      Momentálne neevidujeme žiadne články.
+    </div>
+    <div class="card-deck mb-4">
+      <!-- card -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Post 1</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">čítaj viac</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Post 2</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">čítaj viac</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Post 3</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">čítaj viac</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Post 4</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">čítaj viac</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4">Detail článku - Post 1</h2>
+    <p>
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+    <div class="py-5">
+      <h4 class="mb-4">Komentáre (3)</h4>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Eliseo Gardner</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Eliseo@gardner.biz</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Jayne Kuhic</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Jayne_Kuhic@sydney.com</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Nikita Garfield</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Nikita@garfield.biz</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
