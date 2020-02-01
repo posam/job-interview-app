@@ -69,7 +69,28 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="street">Pozícia:</label>
-              <input type="text" class="form-control" id="position" name="position" placeholder="napr. Senior Software Engineer">
+              <select class="custom-select">
+                <option selected>Vyberte pozíciu</option>
+                <option value="1">JavaScript developer</option>
+                <option value="2">Analyst programmer</option>
+                <option value="3">Application integration engineer</option>
+                <option value="4">Application support manager</option>
+                <option value="5">Computer operator</option>
+                <option value="6">Computer programmer</option>
+                <option value="7">Computer systems manager</option>
+                <option value="8">Desktop support</option>
+                <option value="9">Desktop technician</option>
+                <option value="10">JAVA developer</option>
+                <option value="11">Local area network engineer</option>
+                <option value="12">Network engineer</option>
+                <option value="13">PC maintenance technician</option>
+                <option value="14">Program analyst</option>
+                <option value="15">Project manager</option>
+                <option value="16">Software engineer</option>
+                <option value="17">System administrator</option>
+                <option value="18">System analyst</option>
+                <option value="19">Wide area network engineer</option>
+              </select>
             </div>
           </div>
         </div>
@@ -323,32 +344,34 @@
       <p>Pripravte modul tejto aplikácie "<strong>Post</strong>" prístupom získavaním dát zo servera.
         Tento modul musí obsahovať podstránku <strong>zoznam článkov</strong> a <strong>detail článku</strong> s <strong>prislúchajúcimi komentármi</strong>.
       </p>
-      <table class="table mt-3">
-        <thead>
-        <tr>
-          <th scope="col">Method</th>
-          <th scope="col">Endpoint</th>
-          <th scope="col">Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">GET</th>
-          <td>/posts</td>
-          <td><a href="https://jsonplaceholder.typicode.com/posts" target="_blank">https://jsonplaceholder.typicode.com/posts</a></td>
-        </tr>
-        <tr>
-          <th scope="row">GET</th>
-          <td>/posts/1</td>
-          <td><a href="https://jsonplaceholder.typicode.com/posts/1" target="_blank">https://jsonplaceholder.typicode.com/posts/1</a></td>
-        </tr>
-        <tr>
-          <th scope="row">GET</th>
-          <td>/comments</td>
-          <td><a href="https://jsonplaceholder.typicode.com/comments?postId=1" target="_blank">https://jsonplaceholder.typicode.com/comments?postId=1</a></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table mt-3">
+          <thead>
+          <tr>
+            <th scope="col">Method</th>
+            <th scope="col">Endpoint</th>
+            <th scope="col">Link</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">GET</th>
+            <td>/posts</td>
+            <td><a href="https://jsonplaceholder.typicode.com/posts" target="_blank">https://jsonplaceholder.typicode.com/posts</a></td>
+          </tr>
+          <tr>
+            <th scope="row">GET</th>
+            <td>/posts/1</td>
+            <td><a href="https://jsonplaceholder.typicode.com/posts/1" target="_blank">https://jsonplaceholder.typicode.com/posts/1</a></td>
+          </tr>
+          <tr>
+            <th scope="row">GET</th>
+            <td>/comments</td>
+            <td><a href="https://jsonplaceholder.typicode.com/comments?postId=1" target="_blank">https://jsonplaceholder.typicode.com/comments?postId=1</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>
