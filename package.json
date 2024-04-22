@@ -24,7 +24,7 @@
     "bootstrap": "^4.4.1",
     "ngx-bootstrap": "^6.2.0",
     "ngx-highlightjs": "^4.1.4",
-    "rxjs": "~6.4.0",
+    "rxjs": "~6.6.7",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.4"
   },
