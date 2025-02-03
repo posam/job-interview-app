@@ -16,7 +16,7 @@
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~18.2.12",
-    "@angular/forms": "~8.2.14",
+    "@angular/forms": "~19.1.4",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
