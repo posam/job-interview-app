@@ -19,7 +19,7 @@
     "@angular/forms": "~19.1.6",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
-    "@angular/router": "~8.2.14",
+    "@angular/router": "~19.1.6",
     "@fullcalendar/core": "^6.1.15",
     "bootstrap": "^5.3.3",
     "ngx-bootstrap": "^6.2.0",
