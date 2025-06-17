@@ -18,7 +18,7 @@
     "@angular/core": "~19.2.12",
     "@angular/forms": "~19.2.9",
     "@angular/platform-browser": "~19.2.11",
-    "@angular/platform-browser-dynamic": "~20.0.0",
+    "@angular/platform-browser-dynamic": "~20.0.3",
     "@angular/router": "~20.0.2",
     "@fullcalendar/core": "^6.1.17",
     "bootstrap": "^5.3.6",
