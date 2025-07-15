@@ -23,7 +23,7 @@
     "@fullcalendar/core": "^6.1.18",
     "bootstrap": "^5.3.6",
     "ngx-bootstrap": "^19.0.2",
-    "ngx-highlightjs": "^14.0.0",
+    "ngx-highlightjs": "^14.0.1",
     "rxjs": "~7.8.2",
     "tslib": "^2.8.1",
     "zone.js": "~0.15.1"
