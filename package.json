@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~22.0.1",
     "@angular/platform-browser-dynamic": "~21.2.12",
     "@angular/router": "~22.0.4",
-    "@fullcalendar/core": "^6.1.20",
+    "@fullcalendar/core": "^6.1.21",
     "bootstrap": "^5.3.8",
     "ngx-bootstrap": "^21.2.0",
     "ngx-highlightjs": "^14.0.1",
